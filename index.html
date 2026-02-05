@@ -39,8 +39,9 @@
 
 <div class="box">
   <h1>Hi Jishu, will you be my Valentine? 💖</h1>
-
-  <button id="yes" onclick="yesClick()">YES</button>
+<button id="yes" onclick="yesClick()" disabled>YES</button>
+<p id="finalText" style="margin-top:15px;font-weight:bold;"></p>
+  
   <button id="no">NO</button>
 
   <div id="gallery" style="margin-top:20px;"></div>
@@ -69,9 +70,15 @@
   <p style="margin-top:10px;">${memories[noCount].text}</p>
 `; 
       noCount++;
-    } else {
-      noBtn.innerText = "Okay… I remember now ❤️";
-    }
+} else {
+  noBtn.innerText = "No more escape 😌";
+  
+  document.getElementById("yes").disabled = false;
+
+  document.getElementById("finalText").innerText =
+    "Now what to do? You are stuck with me for a lifetime 💞 " +
+    "Only one option is left…";
+    }    
   });
 </script>
 
