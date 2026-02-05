@@ -38,21 +38,39 @@
 <body>
 
 <div class="box">
-  <h1>Jishu, will you be my Valentine? 💘</h1>
-  <button id="yes" onclick="yesClick()">YES</button>
-  <button id="no" onmouseover="moveNo()">NO</button>
-</div>
+<button id="yes" onclick="yesClick()">YES</button>
+<button id="no">NO</button>
+
+<div id="gallery" style="margin-top:20px;"></div>
 
 <script>
   function yesClick() {
     alert("Yay! ❤️ See you on Valentine’s Day!");
   }
 
-  function moveNo() {
-    const btn = document.getElementById("no");
-    btn.style.left = Math.random() * 70 + "%";
-    btn.style.top = Math.random() * 70 + "%";
-  }
+  let noCount = 0;
+
+  const memories = [
+    { img: "mem1.jpg", text: "This smile still makes my day 💕" },
+    { img: "mem2.jpg", text: "This moment felt like home 🫶" },
+    { img: "mem3.jpg", text: "If this is us… how can it be a no? ❤️" }
+  ];
+
+  const noBtn = document.getElementById("no");
+  const gallery = document.getElementById("gallery");
+
+  noBtn.addEventListener("click", () => {
+    if (noCount < memories.length) {
+      gallery.innerHTML = `
+        <img src="${memories[noCount].img}" 
+             style="width:130px;border-radius:12px;display:block;margin:auto;">
+        <p style="margin-top:10px;">${memories[noCount].text}</p>
+      `;
+      noCount++;
+    } else {
+      noBtn.innerText = "Okay… I remember now ❤️";
+    }
+  });
 </script>
 
 </body>
