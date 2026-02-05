@@ -63,11 +63,11 @@
 
   noBtn.addEventListener("click", () => {
     if (noCount < memories.length) {
-      gallery.innerHTML = `
-        <img src="${memories[noCount].img}" 
-             style="width:130px;border-radius:12px;display:block;margin:auto;">
-        <p style="margin-top:10px;">${memories[noCount].text}</p>
-      `;
+     gallery.innerHTML = `
+  <img src="${memories[noCount].img}" 
+       style="width:130px;border-radius:12px;display:block;margin:auto;">
+  <p style="margin-top:10px;">${memories[noCount].text}</p>
+`; 
       noCount++;
     } else {
       noBtn.innerText = "Okay… I remember now ❤️";
