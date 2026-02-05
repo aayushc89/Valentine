@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Valentine 💖</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffd6e8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .box {
+      background: white;
+      padding: 40px;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      margin: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #yes { background: #ff4d6d; color: white; }
+    #no {
+      background: #eee;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+  <h1>Shivani, will you be my Valentine? 💘</h1>
+  <button id="yes" onclick="yesClick()">YES</button>
+  <button id="no" onmouseover="moveNo()">NO</button>
+</div>
+
+<script>
+  function yesClick() {
+    alert("Yay! ❤️ See you on Valentine’s Day!");
+  }
+
+  function moveNo() {
+    const btn = document.getElementById("no");
+    btn.style.left = Math.random() * 70 + "%";
+    btn.style.top = Math.random() * 70 + "%";
+  }
+</script>
+
+</body>
+</html>
